@@ -35,7 +35,8 @@
 
 @implementation YSMainViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     if (!self.notes) {
@@ -82,27 +83,10 @@
             }
             [self.tableView reloadData];
         }
-        //NSLog(@"%lu", self.notes.count);
     }];
 }
 
 #pragma mark - 各种点击事件处理
-
-//- (void)registerLongGesture:(UITableViewCell *)cell
-//{
-//    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToDelete:)];
-//    [cell addGestureRecognizer:longPress];
-//}
-//
-//- (void)longPressToDelete:(UIGestureRecognizer *)gr
-//{
-//    //获取响应长按事件的视图
-//    YSNoteTableViewCell *cell = (YSNoteTableViewCell *)[gr view];
-//    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-//    
-//    YSNote *note = self.notes[indexPath.row];
-//    
-//}
 
 - (void)registerGestureEvent
 {
@@ -195,7 +179,7 @@
     YSNote *note = self.notes[indexPath.row];
     cell.title.text = note.title;
     cell.content.text = note.content;
-    NSLog(@"%@ %@", note.title, note.content);
+    //NSLog(@"%@ %@", note.title, note.content);
     
     return cell;
 }
@@ -210,18 +194,23 @@
         BmobObject *object = [BmobObject objectWithoutDatatWithClassName:@"YSNote"  objectId:note.oid];
         [object deleteInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error)
         {
-            if (isSuccessful) {
+            if (isSuccessful)
+            {
                 //删除成功后的动作
-                NSLog(@"successful");
+                //NSLog(@"successful");
                 [MBProgressHUD showSuccess:@"删除成功!"];
                 //删除模型中的数据
                 [self.notes removeObject:note];
                 //从TableView中删除
                 [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            } else if (error){
+            }
+            else if (error)
+            {
                 NSLog(@"%@",error);
                 [MBProgressHUD showError:@"删除失败!"];
-            } else {
+            }
+            else
+            {
                 NSLog(@"UnKnow error");
             }
         }];

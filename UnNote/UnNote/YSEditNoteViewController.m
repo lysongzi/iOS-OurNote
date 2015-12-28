@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *finish;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextField;
+@property (weak, nonatomic) IBOutlet UILabel *navTitle;
 
 //@property (weak, nonatomic)
 
@@ -36,6 +37,7 @@
     {
         self.titleTextField.text = self.note.title;
         self.contentTextField.text = self.note.content;
+        self.navTitle.text = @"编辑笔记";
     }
 }
 
@@ -68,16 +70,21 @@
         
         //异步存储到服务器
         [object saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-            if (isSuccessful) {
+            if (isSuccessful)
+            {
                 //创建成功后会返回objectId，updatedAt，createdAt等信息
                 //创建对象成功，打印对象值
-                NSLog(@"%@",object);
+                //NSLog(@"%@",object);
                 [self.navigationController popViewControllerAnimated:YES];
-            } else if (error){
+            }
+            else if (error)
+            {
                 //发生错误后的动作
                 NSLog(@"%@",error);
                 [MBProgressHUD showError:@"网络故障"];
-            } else {
+            }
+            else
+            {
                 NSLog(@"Unknow error");
             }
         }];
@@ -88,7 +95,8 @@
         NSString *title = self.titleTextField.text;
         NSString *content = self.contentTextField.text;
         
-        if (!title) {
+        if (!title)
+        {
             [MBProgressHUD showError:@"标题不能为空"];
         }
         
@@ -105,8 +113,8 @@
         [object updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
             if (isSuccessful)
             {
-                NSLog(@"更新成功，以下为对象值，可以看到score值已经改变");
-                NSLog(@"%@",object);
+                //NSLog(@"更新成功，以下为对象值，可以看到score值已经改变");
+                //NSLog(@"%@",object);
                 [self.navigationController popViewControllerAnimated:YES];
             }
             else

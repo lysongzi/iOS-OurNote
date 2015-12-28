@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
 @end
 
@@ -78,6 +79,29 @@
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.userNameLabel.text = [userDefaults valueForKey:USER_INFO_NAME];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapUserImage:)];
+    [self.userImage addGestureRecognizer:tapGesture];
+    [self.userImage setUserInteractionEnabled:YES];
+}
+
+- (void)tapUserImage:(UITapGestureRecognizer *)gr
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"更改头像" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+    {
+        NSLog(@"拍照");
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+    {
+        NSLog(@"从相册选择");
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){}]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark -m UITableViewDataSource，UITableViewDelegate 协议的实现

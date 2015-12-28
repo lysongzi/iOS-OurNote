@@ -1,0 +1,4 @@
+platform :ios, '8.0'
+pod 'BmobSDK'
+pod 'AFNetworking'
+pod 'MBProgressHUD', '~> 0.9.1'

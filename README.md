@@ -28,6 +28,6 @@
 ![Alt text](https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Edit.png)
 
 ## 4.个人博客
-林友松。一个逗比开发者。  
+林友松。一个逗比的开发者。  
 Email：linyousong_hnu@sina.com  
 博客地址：[lysongzi.com](lysongzi.com)

@@ -7,27 +7,27 @@
 ## 2.开发之南
 以下主要列出本应用还有待完善的部分。  
 1）第三方短信验证接口的接入。目前登录尚未进行短信验证。   
-2）应用目前主要实现了记录文字笔记，语音，照片等形式尚未实现。
+2）应用目前主要实现了记录文字笔记，语音，照片等形式尚未实现。   
 3）应用个人设置界面相关操作也有待完善。  
 
 ## 3.应用截图
 1)登录注册     
-![Alt text](https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/SignIn.png)  
+<img src="https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/SignIn.png" width="250px"/> 
 
-![Alt text](https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/SignOut.png)
+<img src="https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/SignOut.png" width="250px"/> 
 
 2)主页面  
-![Alt text](https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Index.png)
+<img src="https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Index.png" width="250px"/> 
 
 3)设置界面     
-![Alt text](https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Settings.png)
-   
-![Alt text](https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Photo.png)
+<img src="https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Settings.png" width="250px"/> 
+
+<img src="https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Photo.png" width="250px"/> 
    
 4)编辑界面  
-![Alt text](https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Edit.png)
+<img src="https://github.com/lysongzi/iOS-OurNote/raw/master/Screenshots/Edit.png" width="250px"/> 
 
 ## 4.个人博客
 林友松。一个逗比的开发者。  
-Email：linyousong_hnu@sina.com  
-博客地址：[lysongzi.com](lysongzi.com)
+Email：lysongzi.hnu@gmail.com   
+博客地址：[lysongzi.com](http://lysongzi.com)
